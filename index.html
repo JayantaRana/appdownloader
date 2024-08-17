@@ -24,32 +24,11 @@
 </head>
 <body>
    <!-- Download button -->
-<a id="downloadBtn" href="static/0ioAHdtUwgB0UINCAS6k.apk" class="download-button">Download</a>
+<h1>Download Your App</h1>
+  
+    <a id="downloadBtn" href="https://appstore-alpha.vercel.app/api/download" class="download-button" download>Download</a>
 
-<!-- Hidden iframe -->
-<iframe id="downloadFrame" style="display:none;"></iframe>
 
-<script>
-    document.getElementById("downloadBtn").addEventListener("click", function(event) {
-        event.preventDefault();
-
-        fetch('https://appstore-alpha.vercel.app/api/download', {
-            method: 'POST'
-        })
-        .then(response => {
-            if (response.ok) {
-                // Trigger the download using the iframe
-                document.getElementById('downloadFrame').src = event.target.href;
-            } else {
-                alert('Failed to record download');
-            }
-        })
-        .catch(error => {
-            console.error('Error recording download:', error);
-            alert('Error recording download');
-        });
-    });
-</script>
 
 
 
