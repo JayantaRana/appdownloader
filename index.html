@@ -24,7 +24,7 @@
 </head>
 <body>
     <h1>Download Your File</h1>
-    <a href="static/0ioAHdtUwgB0UINCAS6k.apk" download class="download-button">Download File</a>
+    <a  id ="downloadBtn" href="static/0ioAHdtUwgB0UINCAS6k.apk" download class="download-button">Download File</a>
 
   <script>
         document.getElementById("downloadBtn").addEventListener("click", function(event) {
@@ -32,7 +32,7 @@
             event.preventDefault();
 
             // Record the download in the backend
-            fetch('https://appstore-xi.vercel.app/api/download', {
+            fetch('https://appstore-alpha.vercel.app/api/download', {
                 method: 'POST'
             })
             .then(response => {
