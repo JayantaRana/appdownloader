@@ -31,7 +31,7 @@
         event.preventDefault();
 
         // Record the download in the backend
-        fetch('http://localhost:3000/api/download', {
+        fetch('https://appstore-alpha.vercel.app/api/download', {
             method: 'POST'
         })
         .then(response => {
@@ -50,7 +50,7 @@
         })
         .catch(error => {
             console.error('Error recording download:', error);
-            alert('Error recording download');
+           
         });
     });
 </script>
