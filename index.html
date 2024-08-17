@@ -24,11 +24,42 @@
 </head>
 <body>
    <!-- Download button -->
-<h1>Download Your App</h1>
-  
-    <a id="downloadBtn" href="https://appstore-alpha.vercel.app/api/download" class="download-button" download>Download</a>
+<h1>Download Your File</h1>
+    <!-- <a href="static/0ioAHdtUwgB0UINCAS6k.apk" download class="download-button">Download File</a> -->
+    <a id="downloadBtn" href="static/0ioAHdtUwgB0UINCAS6k.apk" class="download-button" download>Download</a>
+   
+   
+   
+<!--    <script>
+        document.getElementById("downloadBtn").addEventListener("click", function(event) {
+            // Prevent the default action (downloading the file)
+            event.preventDefault();
+    
+            // Record the download in the backend
+            fetch('https://appstore-alpha.vercel.app/api/download', {
+                method: 'POST'
+            })
+            .then(response => {
+                if (response.ok) {
+                    // After successfully recording the download, manually initiate the download
+                    const link = document.createElement('a');
+                    link.href = event.target.href; // href of the .apk file
+                    link.download = ''; // This triggers the download
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    alert('Failed to record download');
+                }
+            })
+            .catch(error => {
+                console.error('Error recording download:', error);
+                alert('Error recording download');
+            });
+        });
+    </script> 
 
-
+ -->
 
 
 
