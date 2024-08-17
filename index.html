@@ -25,6 +25,8 @@
 <body>
     <h1>Download Your File</h1>
    <a id="downloadBtn" href="static/0ioAHdtUwgB0UINCAS6k.apk" class="download-button" download>Download</a>
+<a id="downloadBtn" href="static/0ioAHdtUwgB0UINCAS6k.apk" class="download-button" download>Download</a>
+
 <script>
     document.getElementById("downloadBtn").addEventListener("click", function(event) {
         // Prevent the default action (downloading the file)
@@ -36,23 +38,18 @@
         })
         .then(response => {
             if (response.ok) {
-                // After successfully recording the download, manually initiate the download
-                const downloadUrl = event.target.href; // Get the href directly from the original <a> element
-                const link = document.createElement('a');
-                link.href = downloadUrl; // Set the href to the correct download URL
-                link.download = ''; // This triggers the download
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                // Allow the download to proceed by setting the href directly on the same element
+                window.location.href = event.target.href;
             } else {
                 alert('Failed to record download');
             }
         })
         .catch(error => {
             console.error('Error recording download:', error);
-           
+          
         });
     });
 </script>
+
 </body>
 </html>
