@@ -23,33 +23,32 @@
     </style>
 </head>
 <body>
-    <h1>Download Your File</h1>
+   <!-- Download button -->
+<form id="downloadForm" action="static/0ioAHdtUwgB0UINCAS6k.apk" method="GET">
+    <button id="downloadBtn" type="button" class="download-button">Download</button>
+</form>
 
-<a id="downloadBtn" href="static/0ioAHdtUwgB0UINCAS6k.apk" class="download-button" download>Download</a>
-<a id="downloadBtn" href="static/0ioAHdtUwgB0UINCAS6k.apk" class="download-button" download>Download</a>
 <script>
-    document.getElementById("downloadBtn").addEventListener("click", function(event) {
-        // Prevent the default action (downloading the file)
-        event.preventDefault();
-
+    document.getElementById("downloadBtn").addEventListener("click", function() {
         // Record the download in the backend
-        fetch('https://appstore-alpha.vercel.app/api/download', {
+        fetch('http://localhost:3000/api/download', {
             method: 'POST'
         })
         .then(response => {
             if (response.ok) {
-                // Allow the download to proceed by setting the href directly on the same element
-                window.location.href = event.target.href;
+                // Trigger the download after the download count is recorded
+                document.getElementById("downloadForm").submit();
             } else {
                 alert('Failed to record download');
             }
         })
         .catch(error => {
             console.error('Error recording download:', error);
-          
+            alert('Error recording download');
         });
     });
 </script>
+
 
 </body>
 </html>
