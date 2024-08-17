@@ -26,6 +26,24 @@
     <h1>Download Your File</h1>
     <a href="static/0ioAHdtUwgB0UINCAS6k.apk" download class="download-button">Download File</a>
 
-   
+  <script>
+        document.getElementById("downloadBtn").addEventListener("click", function(event) {
+            // Prevent the default action
+            event.preventDefault();
+
+            // Record the download in the backend
+            fetch('https://appstore-xi.vercel.app/api/download', {
+                method: 'POST'
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Initiate the download after the download count is recorded
+                    window.location.href = event.target.href;
+                } else {
+                    alert('Failed to record download');
+                }
+            });
+        });
+    </script> 
 </body>
 </html>
