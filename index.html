@@ -39,7 +39,8 @@
     
             // Record the download in the backend
             fetch('http://localhost:3000/api/download', {
-                method: 'POST'
+                method: 'POST',
+                 mode: 'no-cors'
             })
             .then(response => {
                 if (response.ok) {
