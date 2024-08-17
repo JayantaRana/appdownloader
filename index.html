@@ -24,20 +24,22 @@
 </head>
 <body>
    <!-- Download button -->
-<form id="downloadForm" action="static/0ioAHdtUwgB0UINCAS6k.apk" method="GET">
-    <button id="downloadBtn" type="button" class="download-button">Download</button>
-</form>
+<a id="downloadBtn" href="static/0ioAHdtUwgB0UINCAS6k.apk" class="download-button">Download</a>
+
+<!-- Hidden iframe -->
+<iframe id="downloadFrame" style="display:none;"></iframe>
 
 <script>
-    document.getElementById("downloadBtn").addEventListener("click", function() {
-        // Record the download in the backend
+    document.getElementById("downloadBtn").addEventListener("click", function(event) {
+        event.preventDefault();
+
         fetch('http://localhost:3000/api/download', {
             method: 'POST'
         })
         .then(response => {
             if (response.ok) {
-                // Trigger the download after the download count is recorded
-                document.getElementById("downloadForm").submit();
+                // Trigger the download using the iframe
+                document.getElementById('downloadFrame').src = event.target.href;
             } else {
                 alert('Failed to record download');
             }
@@ -48,6 +50,7 @@
         });
     });
 </script>
+
 
 
 </body>
