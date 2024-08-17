@@ -33,7 +33,7 @@
     document.getElementById("downloadBtn").addEventListener("click", function(event) {
         event.preventDefault();
 
-        fetch('http://localhost:3000/api/download', {
+        fetch('https://appstore-alpha.vercel.app/api/download', {
             method: 'POST'
         })
         .then(response => {
