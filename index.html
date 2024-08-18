@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Tracker</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>GetApps</title>
     <style>
-       .download-button {
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    font-family: "Poppins",sans-serif;
+    box-sizing: border-box;
+    
+}
+        body{
+            background-color: rgb(255, 255, 255);
+          
+           
+        }
+        h1{
+            color: rgb(255, 255, 255);
+            background-color: black;
+            margin-top: 0;
+            padding: 10px;
+            
+        }
+        .download-button {
+            margin-top: 10px;
             padding: 10px 20px;
             background-color: #0062ff;
             color: white;
@@ -20,15 +42,131 @@
         .download-button:hover {
             background-color: #123acb;
         }
+        .container{
+           display: flex;
+        }
+        .container img{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+        }
+        .sub-container{
+            display: flex;
+            flex-direction: column;
+            column-gap: 0px;
+        }
+        .sub-container p{
+            font-size: 20px;
+            font-weight:500;
+            margin-bottom: 0;
+        }
+        .sub-container .icon{
+            margin-top: 0;
+            padding-top: 0;
+            color: green;
+           
+        }
+        .container2{
+            display: flex;
+            flex-direction: row;
+        }
+        .infobox{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        #infomain{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .info h5{
+            color: #0062ff;
+        }
+       #info1{
+     color: #012797;
+     font-weight: 500;
+       }
+       #info2{
+        color: #000000;
+        font-weight: 500;
+       } 
     </style>
 </head>
 <body>
-  <h1>Download Your File</h1>
-    <!-- <a href="static/0ioAHdtUwgB0UINCAS6k.apk" download class="download-button">Download File</a> -->
-    <!-- <a id="downloadBtn" href="static/0ioAHdtUwgB0UINCAS6k.apk" class="download-button" download>Download</a> -->
+ <h1>GetApps</h1>
+    <div class="container">
+        <div>
+            <img src="logo2.jpg" alt="">
+        </div>
+        <div class="sub-container">
+            <p>TravelTiming</p>
+            <div class="container2">
+                <i class='bx bxs-check-shield' style='color:#10a30a'  >Trusted</i>&nbsp;|&nbsp;
+                <i class='bx bxs-star' style='color:#ffd52b'  >3.8</i>&nbsp;|&nbsp;
+                <i class='bx bxl-android' style='color:#000000'  >25MB</i>
+            </div>
+        </div>
+
+        
+        
+    </div>
+   
     <a id="downloadBtn"  class="download-button" download  >Download</a>
     
-    <!-- <a id="downloadBtn" href="http://localhost:3000/api/download" class="download-button" download>Download</a> -->
+   <div class="info">
+
+        
+        <h3>About this app</h3>
+        <p id="infomain">"TravelTiming" is your 
+            reliable companion for planning bus journeys. Whether you're a daily commuter or an occasional traveler, TravelTiming provides up-to-date bus schedules, route details, and real-time updates to make your trips smooth and hassle-free. Our mission is to empower travelers with accurate information, enabling them to plan their journeys efficiently and make the most of their time.
+
+            With an easy-to-use interface and 
+            comprehensive data coverage, 
+            TravelTiming is designed to cater to 
+            all your bus travel needs. 
+            Whether you're planning a quick 
+            trip or exploring new destinations,
+             TravelTiming ensures you get to your destination on time,
+            every time.</p>
+
+
+            <h3>Key Features:</h3>
+            <p>
+            <h5>User-Friendly Interface:</h5>
+            Navigate through our platform effortlessly with an intuitive design that prioritizes user experience. Whether you're checking bus schedules or managing your bookings, everything is just a click away.
+            <br>
+            <h5>  Comprehensive Timetable:</h5>
+          
+            Access detailed and accurate bus schedules for various routes across different cities. Our database is regularly updated to ensure you have the latest information at your fingertips.
+            <br>
+            <h5>Share:</h5>
+            
+            Found the perfect bus route for your journey? Share it with friends and family directly from our app. TravelTiming makes it easy to spread the word and help others find their way.
+            <br>
+            <h5>Add Your Bus:</h5>
+            
+            Are you a bus operator? TravelTiming allows you to register your bus and manage schedules through our platform. Expand your reach and connect with more passengers by listing your services with us.</p>
+
+            <h3>App info</h3>
+            <div class="infobox">
+            <p id="info1">
+                version: <br><br>
+                Updated on :<br><br>
+                Developed by : <br><br>
+                App size  : <br><br>
+                Email : <br><br>
+                Released on : <br><br>
+            </p>
+            <p id="info2">
+                1.0.1 <br><br>
+               Aug 24, 2024 <br><br>
+                Jayanta Rana<br><br>
+                 25MB <br><br>
+                 contact@jayantarana.epizy.com <br><br>
+                 Aug 24,2024 <br><br>
+            </p>
+        </div>
+    </div>
    
    
    <script>
