@@ -79,28 +79,7 @@
             color: #0062ff;
         }
 
-        //spiner style
-         .spinner {
-            display: none; /* Hidden by default */
-            margin: 20px auto;
-            border: 8px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 8px solid #0062ff;
-            width: 60px;
-            height: 60px;
-            -webkit-animation: spin 2s linear infinite;
-            animation: spin 2s linear infinite;
-        }
-
-        @-webkit-keyframes spin {
-            0% { -webkit-transform: rotate(0deg); }
-            100% { -webkit-transform: rotate(360deg); }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+     
     
     </style>
 </head>
@@ -124,7 +103,7 @@
     </div>
    
     <a id="downloadBtn"  class="download-button" download  >Download</a>
-    <div id="spinner" class="spinner"></div>
+
     
    <div class="info">
 
@@ -176,7 +155,7 @@
         document.getElementById("downloadBtn").addEventListener("click", function(event) {
             // Prevent the default action (downloading the file)
             event.preventDefault();
-            document.getElementById("spinner").style.display = "block";//new add
+           
     
             // Record the download in the backend
             fetch('https://appstore-alpha.vercel.app/api/download', {
@@ -184,7 +163,7 @@
                 method: 'POST'
             })
             .then(response => {
-                document.getElementById("spinner").style.display = "none";//new add
+               
                 if (response.ok) {
                     // After successfully recording the download, manually initiate the download
                     const link = document.createElement('a');
@@ -198,7 +177,7 @@
                 }
             })
             .catch(error => {
-                 document.getElementById("spinner").style.display = "none";//new add
+                
                 console.error('Error recording download:', error);
                 alert('Error recording download');
             });
